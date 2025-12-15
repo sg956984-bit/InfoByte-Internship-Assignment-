@@ -1,0 +1,219 @@
+/* GLOBAL RESET AND FONT */
+* {
+    box-sizing: border-box; /* Ensures padding/border don't affect width/height */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+    background-color: #F4F4F9;
+    line-height: 1.6;
+}
+
+/* --- 1. HEADER STYLES (Flexbox) --- */
+header {
+    background-color: #001F3F; /* Deep Navy */
+    color: #FFFFFF;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #3D9970; /* Vibrant Teal */
+}
+
+
+/* --- 2. HERO SECTION STYLES (Flexbox) --- */
+.hero {
+    background-color: #F4F4F9;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #001F3F;
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+}
+
+/* CTA Button */
+.cta-button {
+    background-color: #3D9970; /* Vibrant Teal */
+    color: #FFFFFF;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1em;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    background-color: #2e7a57;
+    transform: translateY(-2px);
+}
+
+
+/* --- 3. FEATURES SECTION STYLES (CSS Grid) --- */
+.features-section {
+    padding: 80px 5%;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #001F3F;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-box {
+    background-color: #F4F4F9;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+
+.feature-box:hover {
+    box-shadow: 0 8px 15px rgba(61, 153, 112, 0.2);
+}
+
+.icon {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.feature-box h3 {
+    color: #001F3F;
+    margin-bottom: 10px;
+}
+
+/* --- 4. FOOTER STYLES (Flexbox) --- */
+footer {
+    background-color: #001F3F;
+    color: #FFFFFF;
+    padding: 30px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.social-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #3D9970;
+}
+
+/* --- MODAL STYLES (Required for JavaScript) --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #3D9970;
+    text-decoration: none;
+}
+
+/* --- Media Query for Responsiveness --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav {
+        margin-top: 15px;
+    }
+    nav a {
+        margin: 0 10px;
+    }
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .social-links {
+        margin-top: 10px;
+    }
+}
